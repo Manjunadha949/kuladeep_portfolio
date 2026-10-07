@@ -67,3 +67,49 @@ body:has(.owner-login) .chat-launcher,body:has(.owner-login) .chat-panel,body:ha
 
 /* Equal-height location details keep both maps aligned on desktop. */
 .practice-card{display:grid;grid-template-rows:1fr auto auto;min-width:0}.practice-info{min-width:0}.practice-contacts a{overflow-wrap:anywhere}
+
+/* Desktop spacing: mobile rules remain unchanged. */
+@media (min-width:1024px){
+ .hero{min-height:0;padding-top:40px;padding-bottom:48px;gap:40px}
+ .section{padding-top:64px;padding-bottom:64px}
+ .section-head{margin-bottom:30px;gap:32px}
+ .about{gap:52px}
+ .journey-grid{gap:48px;margin-top:32px}
+ .faq{gap:48px}
+ .collection-heading{margin-bottom:26px}
+ .collection-more{margin-top:22px}
+ .practice-info{padding:28px}
+ .site-footer{padding-top:28px;padding-bottom:28px}
+}
+
+/* Compact Owner Studio on laptops; preserve the mobile dashboard. */
+@media (min-width:1024px){
+ .admin.wrap{width:min(1120px,calc(100% - 64px));padding-top:18px;padding-bottom:40px}
+ .admin .studio-topbar{padding:4px 0 16px}
+ .admin .studio-welcome{margin:24px 0 20px;gap:24px}
+ .admin .studio-welcome h1{font-size:34px;margin-bottom:8px;line-height:1.2}
+ .admin .studio-welcome .eyebrow{margin-bottom:8px}
+ .admin .studio-welcome p{font-size:15px;line-height:1.6}
+ .admin .studio-overview{gap:14px;margin:20px 0}
+ .admin .studio-overview>div{padding:16px 20px;gap:4px}
+ .admin .studio-overview strong{font-size:28px}
+ .admin .studio-main-tabs{margin:20px 0;padding:5px;max-width:820px}
+ .admin .studio-main-tabs button{padding:10px 14px;min-height:44px;gap:8px;font-size:14px}
+ .admin .website-studio{margin:0 0 24px;padding:24px}
+ .admin .studio-heading{gap:24px}
+ .admin .studio-heading h2{font-size:26px;margin-bottom:8px}
+ .admin .studio-heading p{margin-bottom:0;line-height:1.6}
+ .admin .studio-tabs{margin:18px 0;gap:8px}
+ .admin .studio-save{margin-top:22px;padding-top:18px}
+ .admin-grid{gap:24px;align-items:start}
+ .admin .editor{padding:24px}
+ .admin-grid[data-view=clinic] .contact-editor{max-width:none}
+ .admin .contact-editor form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
+ .admin .contact-editor form>.practice-editor-group{grid-column:auto}
+ .admin .contact-editor form>.btn,.admin .contact-editor form>[role=status]{grid-column:1/-1;justify-self:start}
+ .admin .practice-editor-group{padding:18px}
+ .admin .practice-fields{gap:12px 16px}
+ .admin .copy-grid{gap:16px;margin-top:18px}
+ .admin .photo-manager-grid{gap:16px}
+ .admin .owner-security{max-width:560px}
+}
