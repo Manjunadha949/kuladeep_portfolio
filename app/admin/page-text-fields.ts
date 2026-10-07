@@ -4,11 +4,6 @@ export const pageTextGroups = [
     "description": "Text used in the top strip, site identity and shared buttons.",
     "fields": [
       {
-        "key": "text_1",
-        "label": "Skip-to-content link",
-        "help": "Accessibility link at the top of the homepage."
-      },
-      {
         "key": "text_2",
         "label": "Practice names in the top strip",
         "help": "First strip above the navigation; update visible wording only."
