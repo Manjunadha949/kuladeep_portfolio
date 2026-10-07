@@ -1,0 +1,1 @@
+import {NextResponse} from 'next/server';import {revokeSession,sessionCookie} from '../../owner-auth';export async function GET(req:Request){await revokeSession();const r=NextResponse.redirect(new URL('/login',req.url),303);r.cookies.set({...sessionCookie(''),maxAge:0});return r}

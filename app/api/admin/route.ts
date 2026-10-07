@@ -1,0 +1,1 @@
+import {db} from '../../../lib/turso.mjs';import {getOwnerUser} from '../../chatgpt-auth';export async function GET(){if(!await getOwnerUser())return new Response('Unauthorized',{status:401});const x=await db.prepare('SELECT * FROM content ORDER BY created DESC').all();return Response.json(x.results)}

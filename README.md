@@ -44,7 +44,7 @@ source ZIP into the static-file uploader.
 2. In Netlify, choose Add new project > Import an existing project, then select
    the repository.
 3. Set the five environment variables above before deploying.
-4. The included netlify.toml uses `npm run db:init && npm run build` and `.next`.
+4. The included netlify.toml uses `npm install --include=dev && npm run db:init && npm run build` and `.next`.
    Netlify detects Next.js and applies its adapter automatically.
 5. Deploy and open the returned `https://<site-name>.netlify.app` URL.
 6. Portfolio: `/`; owner login: `/login`; Owner Studio: `/admin`; public demo:

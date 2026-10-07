@@ -1,0 +1,3 @@
+import {NextResponse} from 'next/server';
+import {checkPassword,createOwnerSession,sessionCookie,sameOrigin,loginLimited,ownerUsername} from '../../owner-auth';
+export async function POST(req:Request){if(!sameOrigin(req))return new Response('Invalid request',{status:403});if(await loginLimited(req))return NextResponse.redirect(new URL('/login?error=1',req.url),303);const data=await req.formData();if(data.get('username')!==ownerUsername()||!await checkPassword(String(data.get('password')||'')))return NextResponse.redirect(new URL('/login?error=1',req.url),303);const r=NextResponse.redirect(new URL('/admin',req.url),303);r.cookies.set(sessionCookie(await createOwnerSession()));return r}

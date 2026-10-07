@@ -1,5 +1,5 @@
 [build]
-  command = "npm run db:init && npm run build"
+  command = "npm install --include=dev && npm run db:init && npm run build"
   publish = ".next"
 
 [build.environment]

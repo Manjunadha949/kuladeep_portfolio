@@ -1,0 +1,1 @@
+import {pbkdf2Sync,randomBytes} from 'node:crypto';const password=process.env.OWNER_SETUP_PASSWORD;if(!password)throw new Error('Set OWNER_SETUP_PASSWORD locally for this command.');const salt=randomBytes(16).toString('hex');process.stdout.write(salt+':'+pbkdf2Sync(password,salt,100000,32,'sha256').toString('hex')+'\n');

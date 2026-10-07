@@ -1,0 +1,2 @@
+import {db} from '../../../../lib/turso.mjs';
+export async function GET(req:Request,{params}:{params:Promise<{id:string}>}){const {id}=await params;if(!/^[a-zA-Z0-9-]{1,100}$/.test(id))return new Response('Not found',{status:404});const row=await db.prepare('SELECT mime,data FROM images WHERE id=?').bind(id).first();if(!row)return new Response('Not found',{status:404});return new Response(new Uint8Array(row.data as Uint8Array),{headers:{'Content-Type':String(row.mime),'Cache-Control':'public,max-age=31536000,immutable','X-Content-Type-Options':'nosniff'}})}

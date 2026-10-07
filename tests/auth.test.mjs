@@ -1,0 +1,6 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+process.env.SESSION_SECRET='test-only-secret-with-more-than-thirty-two-characters';
+const {createSession,validSession,safeReturn,sameOrigin}=await import('../lib/owner-session.mjs');
+test('only intact unexpired signed owner sessions are accepted',()=>{const now=Date.now(),token=createSession(now);assert.equal(validSession(token,now+1000),true);assert.equal(validSession(token+'x',now),false);assert.equal(validSession(token,now+8*60*60*1000+1),false);assert.equal(validSession(undefined),false);process.env.SESSION_SECRET='another-long-test-secret-more-than-thirty-two-chars';assert.equal(validSession(token,now),false);});
+test('return paths cannot redirect to an external host',()=>{assert.equal(safeReturn('//example.com'),'/admin');assert.equal(safeReturn('https://example.com'),'/admin');assert.equal(safeReturn('/\\example.com'),'/admin');assert.equal(safeReturn('/admin'),'/admin');});
+test('write requests reject missing or foreign origins',()=>{assert.equal(sameOrigin(new Request('https://clinic.example/api/content',{headers:{origin:'https://evil.example'}})),false);assert.equal(sameOrigin(new Request('https://clinic.example/api/content')),false);assert.equal(sameOrigin(new Request('https://clinic.example/api/content',{headers:{origin:'https://clinic.example'}})),true);});

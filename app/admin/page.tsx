@@ -1,0 +1,1 @@
+import {redirect} from 'next/navigation';import {getOwnerUser} from '../chatgpt-auth';import Admin from './panel';export const dynamic='force-dynamic';export default async function Page(){if(!await getOwnerUser())redirect('/login');return <Admin/>}

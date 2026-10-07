@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1791279684682,
+      "tag": "0000_careless_captain_midlands",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1791285510093,
+      "tag": "0001_needy_sebastian_shaw",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1791286887457,
+      "tag": "0002_update_whatsapp",
+      "breakpoints": true
+    }
+  ]
+}
