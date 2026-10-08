@@ -116,3 +116,6 @@ body:has(.owner-login) .chat-launcher,body:has(.owner-login) .chat-panel,body:ha
 
 /* Clear, section-based labels in the owner page-text editor. */
 .page-text-search{display:block;font-size:14px;font-weight:600;margin:20px 0}.page-text-search .studio-search{display:block;max-width:100%;font-weight:400}.page-text-group{margin:28px 0}.page-text-group>h3{font-size:21px;margin:0 0 8px}.page-text-group>.small{margin:0}.page-text-group .copy-grid{margin-top:14px}.copy-field>strong{display:block;font-size:15px;color:var(--ink);line-height:1.4}.copy-field>.copy-help{font-size:13px;line-height:1.6;color:var(--muted);margin:8px 0}.copy-field textarea{resize:vertical;min-height:88px;line-height:1.6}@media(max-width:760px){.page-text-group>h3{font-size:19px}.page-text-group .copy-field{padding:16px}}
+
+.experience-dates{font-size:.9rem!important;font-weight:600;color:var(--orange,#d55314)}
+.list-editor-row label span:has(input[type="checkbox"]){display:flex;align-items:center;gap:8px;font-size:.85rem;margin-top:8px}.list-editor-row input[type="checkbox"]{width:18px;height:18px;flex-shrink:0}
